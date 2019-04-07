@@ -1,0 +1,19 @@
+{
+  "name": "responsive-lp-exercise1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Shunsuke Hondo",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel src/index.pug",
+    "build": "parcel build src/index.pug",
+    "clean": "rm -rf ./dist/*"
+  },
+  "dependencies": {
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "stylus": "^0.54.5"
+  }
+}
