@@ -1,12 +1,26 @@
+$breakpoint = 700px;
+
 sp() {
   @media screen and (max-width: $breakpoint) {
     {block}
   }
 }
 
+$primary-c = hsl(120, 100%, 25%);
+$secondary-c = #ADD8E6;
+$third-c = #008080;
+$link-c = hsl(180, 100%, 25%);
+
 $header-h = 70px;
 
+card-shadow()
+  border-radius: 2px;
+  box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+
+
 body
+  margin: 0;
+  padding: 0;
   font-family: 'Open Sans', sans-serif;
 
 li
@@ -22,6 +36,11 @@ a
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  align-items: center;
+  +sp() {
+    justify-content: center;
+    text-align: center;
+  }
   height: $header-h;
   background: #efefef;
 
@@ -35,11 +54,178 @@ a
       display: flex;
       flex-direction: row;
       justify-content: space-around;
+      +sp() {
+        justify-content: space-around;
+        margin-right: 20px;
+      }
       align-items: center;
       
       li
         a
-          color: hsl(180, 100%, 25%)
+          color: $link-c;
+          text-align: center;
 
 #main
+  margin: 0;
   margin-top: $header-h;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+#section-hero
+  background: #efefef;
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title
+    font-size: 35px;
+    line-height: 35px;
+    height: 35px;
+    font-weight: 500;
+  .subtitle
+    margin-top: -16px;
+    font-size: 16px;
+    line-height: 16px;
+    a
+      color: $primary-c;
+
+#section-work
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2
+    font-weight: 320;
+    color: $third-c;
+
+  #work-list
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .work-item
+      margin: 30px;
+      width: 300px;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      card-shadow();
+
+      a
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        img
+          width: 100%;
+          height: 80%;
+          padding: 0;
+          margin: 0;
+          border-bottom: 2px solid $secondary-c;
+
+        .caption
+          width: 100%;
+          height: 20%;
+          text-align: center;
+          color: $link-c;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+  a.button
+    margin: 45px 0;
+    background: #ddd;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 45px;
+    border-radius: 5px;
+    border: 1px solid $primary-c;
+    font-size: 18px;
+    color: $link-c;
+
+
+$contact-bg-c = hsl(118, 76%, 87%);
+
+#contact
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $contact-bg-c;
+
+  h2
+    margin-top: 300px;
+    margin-bottom: 0;
+    font-size: 35px;
+    font-weight: 380;
+
+    +sp() {
+      margin-top: 100px;
+    }
+  
+  h3
+    margin-top: 0;
+    font-size: 16px;
+    font-weight: 345;
+
+  #contact-list
+    margin-top: 100px;
+    margin-bottom: 500px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    +sp() {
+      flex-direction: column;
+      justify-content: space-around;
+      margin-bottom: 0;
+    }
+
+    .contact
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 40px;
+      width: 100px;
+      height: 100px;
+      background: #ddd;
+      border-radius: 50%;
+      border: 1px solid $primary-c;
+        
+
+#footer
+  height: 120px;
+  background: #21303F;
+  color: white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 20px;
+
+  #footer-msg
+    margin-top: 20px;
+  
+  #copyright
+    font-size: 12px;
