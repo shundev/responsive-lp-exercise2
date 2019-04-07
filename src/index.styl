@@ -3,3 +3,43 @@ sp() {
     {block}
   }
 }
+
+$header-h = 70px;
+
+body
+  font-family: 'Open Sans', sans-serif;
+
+li
+  list-style: none;
+a
+  text-decoration: none;
+    
+
+#header
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  height: $header-h;
+  background: #efefef;
+
+  #navbar
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+
+    ul
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      
+      li
+        a
+          color: hsl(180, 100%, 25%)
+
+#main
+  margin-top: $header-h;
